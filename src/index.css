@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-gray-800 leading-relaxed font-['Inter'];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-gray-300 hover:border-teal-600 text-gray-800 font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-sm;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-gray-800;
+  }
+  
+  .section-subheading {
+    @apply text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-12;
+  }
+
+  .fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in.appear {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #0d9488 0%, #7e22ce 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #0d9488, #7e22ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
