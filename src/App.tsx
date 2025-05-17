@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { WalletProvider, ConnectionProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { clusterApiUrl } from '@solana/web3.js';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
@@ -14,6 +16,7 @@ import Healer from './pages/Healer';
 import Profile from './pages/Profile';
 import Wallet from './pages/Wallet';
 import AIAssistant from './components/AIAssistant';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const endpoint = clusterApiUrl('devnet');
@@ -28,7 +31,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/platform" element={<Platform />}>
+                <Route path="/platform" element={<ProtectedRoute><Platform /></ProtectedRoute>}>
                   <Route index element={<AIAssistant />} />
                   <Route path="forum" element={<Forum />} />
                   <Route path="resources" element={<Resources />} />

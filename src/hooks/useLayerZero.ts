@@ -9,7 +9,7 @@ import { useConnection } from '@solana/wallet-adapter-react';
 export const useLayerZero = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { publicKey, sendTransaction } = useWallet();
+  const { publicKey, sendTransaction, connected } = useWallet();
   const { connection } = useConnection();
 
   const sendCrossChainMessage = useCallback(async (
@@ -22,9 +22,14 @@ export const useLayerZero = () => {
 
     try {
       if (useSolana) {
-        if (!publicKey) {
+        if (!connected || !publicKey) {
           throw new Error('Please connect your Solana wallet');
         }
+
+        if (!connection) {
+          throw new Error('Solana connection not established');
+        }
+
         const solanaMessenger = new SolanaMessenger(connection.rpcEndpoint);
         const signature = await solanaMessenger.sendCrossChainMessage(
           { publicKey, sendTransaction },
@@ -34,7 +39,7 @@ export const useLayerZero = () => {
         return signature;
       }
 
-      // Request wallet connection
+      // EVM chain handling
       if (!window.ethereum) {
         throw new Error('Please install MetaMask to use cross-chain messaging');
       }
@@ -44,28 +49,28 @@ export const useLayerZero = () => {
 
       const messenger = new LayerZeroMessenger(provider);
       
-      // Estimate fees first
       const { nativeFee } = await messenger.estimateFees(
         destinationChainId,
         message
       );
 
-      // Send the message
       const tx = await messenger.sendMessage(destinationChainId, message);
       await tx.wait();
 
       return tx.hash;
     } catch (err) {
-      setError(err.message);
-      throw err;
+      const errorMessage = err.message || 'An unexpected error occurred';
+      setError(errorMessage);
+      throw new Error(errorMessage);
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [publicKey, sendTransaction, connected, connection]);
 
   return {
     sendCrossChainMessage,
     isLoading,
-    error
+    error,
+    isWalletConnected: connected
   };
 };

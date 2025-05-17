@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Zap, Mail, Lock, Eye, EyeOff, Wallet } from 'lucide-react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { useAuth } from '../hooks/useAuth';
 import "@solana/wallet-adapter-react-ui/styles.css";
 
 const Login: React.FC = () => {
@@ -11,24 +12,27 @@ const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { connected } = useWallet();
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (connected) {
+    if (connected || isAuthenticated) {
       navigate('/platform');
     }
-  }, [connected, navigate]);
+  }, [connected, isAuthenticated, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call delay
-    setTimeout(() => {
-      // Any email/password combination works
+    try {
+      await login(email, password);
       navigate('/platform');
+    } catch (error) {
+      console.error('Login error:', error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
