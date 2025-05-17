@@ -18,7 +18,10 @@ export class SolanaMessenger {
   ) {
     if (!wallet.publicKey) throw new Error('Wallet not connected');
 
-    const messageBuffer = Buffer.from(message);
+    // Use TextEncoder instead of Buffer
+    const encoder = new TextEncoder();
+    const messageBytes = encoder.encode(message);
+    
     const transaction = new Transaction().add(
       SystemProgram.transfer({
         fromPubkey: wallet.publicKey,

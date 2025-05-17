@@ -1,5 +1,6 @@
 import { ethers } from 'ethers';
 import { ChainId } from '@layerzerolabs/lz-sdk';
+import { encode as base64Encode } from '@ethersproject/base64';
 
 // Basic LayerZero endpoint ABI for cross-chain messaging
 const LZ_ENDPOINT_ABI = [
@@ -63,14 +64,16 @@ export class LayerZeroMessenger {
     }
 
     const destination = await this.signer.getAddress();
-    const payload = ethers.utils.toUtf8Bytes(message);
+    // Convert message to Uint8Array instead of using Buffer
+    const encoder = new TextEncoder();
+    const payload = encoder.encode(message);
     const { nativeFee } = await this.estimateFees(dstChainId, message);
 
     // Send the cross-chain message
     return endpoint.send(
       dstChainId,
       ethers.utils.hexlify(destination),
-      payload,
+      ethers.utils.hexlify(payload),
       await this.signer.getAddress(),
       ethers.constants.AddressZero,
       "0x",
