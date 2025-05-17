@@ -7,6 +7,10 @@
   "dependencies": {
     "together-ai": "^0.16.0",
     "uuid": "^9.0.1",
+    "@solana/spl-token": "^0.3.11",
+    "@layerzerolabs/scan-client": "^0.0.8",
+    "@layerzerolabs/lz-sdk": "^0.0.33",
+    "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",

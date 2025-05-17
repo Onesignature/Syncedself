@@ -1,5 +1,8 @@
 import React from 'react';
 import { Wallet as WalletIcon, ArrowUpRight, ArrowDownRight, Clock, RefreshCw } from 'lucide-react';
+import { useSyncedToken } from '../hooks/useSyncedToken';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 interface Transaction {
   id: number;
@@ -38,6 +41,9 @@ const transactions: Transaction[] = [
 ];
 
 const Wallet: React.FC = () => {
+  const { balance, activity, isLoading, refreshBalance } = useSyncedToken();
+  const { connected } = useWallet();
+
   return (
     <div className="container-custom py-8">
       <div className="flex items-center mb-8">
@@ -49,8 +55,17 @@ const Wallet: React.FC = () => {
         {/* Balance Card */}
         <div className="lg:col-span-1">
           <div className="bg-gradient-to-r from-teal-600 to-teal-700 p-6 rounded-xl text-white">
-            <h2 className="text-lg font-medium mb-4">Available Balance</h2>
-            <div className="text-3xl font-bold mb-4">$420.00</div>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-medium">Available Balance</h2>
+              {isLoading && <RefreshCw className="h-5 w-5 animate-spin" />}
+            </div>
+            {connected ? (
+              <div className="text-3xl font-bold mb-4">{balance.toFixed(2)} $SYNCED</div>
+            ) : (
+              <div className="mb-4">
+                <WalletMultiButton className="!bg-white !text-teal-600 hover:!bg-gray-50" />
+              </div>
+            )}
             <div className="flex space-x-4">
               <button className="flex-1 bg-white text-teal-600 py-2 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
                 <ArrowUpRight className="h-5 w-5 mr-2" />

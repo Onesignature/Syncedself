@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Shield, Users, Lock, Sparkles, Clock, Banknote } from 'lucide-react';
+import { Shield, Users, Lock, Sparkles, Clock, Banknote, Network, Vote } from 'lucide-react';
 
 const FeatureCard: React.FC<{
   icon: React.ReactNode;
@@ -60,38 +60,38 @@ const Features: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
             icon={<Shield className="h-6 w-6 text-teal-600" />}
-            title="Enhanced Privacy"
-            description="Your data is encrypted and secured through blockchain technology, ensuring your therapy sessions remain confidential."
+            title="Cross-Chain Integration"
+            description="Access mental health services seamlessly across multiple blockchains through LayerZero's secure messaging protocol."
             delay="200ms"
           />
           <FeatureCard
             icon={<Users className="h-6 w-6 text-teal-600" />}
-            title="Global Therapist Network"
-            description="Access qualified therapists from around the world, matched to your specific needs and preferences."
+            title="DAO Governance"
+            description="$SYNCED token holders participate in platform decisions, from feature development to therapist verification."
             delay="300ms"
           />
           <FeatureCard
             icon={<Lock className="h-6 w-6 text-teal-600" />}
-            title="Self-Sovereign Identity"
-            description="You control your health data and can selectively share information, maintaining full autonomy."
+            title="Token Economy"
+            description="Use $SYNCED tokens for therapy payments, governance voting, and earning rewards through platform participation."
             delay="400ms"
           />
           <FeatureCard
             icon={<Sparkles className="h-6 w-6 text-teal-600" />}
-            title="Verified Credentials"
-            description="Therapist qualifications are verified on the blockchain, ensuring trust and transparency."
+            title="Community Rewards"
+            description="Earn $SYNCED tokens through consistent platform engagement and helping others in the community."
             delay="500ms"
           />
           <FeatureCard
             icon={<Clock className="h-6 w-6 text-teal-600" />}
-            title="Flexible Sessions"
-            description="Schedule sessions at your convenience with no intermediaries or restrictions."
+            title="Solana Speed"
+            description="Lightning-fast transactions and low fees powered by Solana's high-performance blockchain."
             delay="600ms"
           />
           <FeatureCard
             icon={<Banknote className="h-6 w-6 text-teal-600" />}
-            title="Transparent Pricing"
-            description="Pay directly to therapists with lower fees through our token system, making therapy more accessible."
+            title="Token Staking"
+            description="Stake $SYNCED tokens to earn platform fees and participate in governance decisions."
             delay="700ms"
           />
         </div>

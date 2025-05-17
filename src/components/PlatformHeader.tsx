@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
-  Zap, 
   MessageSquare, 
   Book, 
   Award, 
@@ -25,9 +24,9 @@ const PlatformHeader: React.FC = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <Zap className="h-6 w-6 text-teal-600" />
-              <span className="ml-2 font-bold">SyncedSelf</span>
+            <Link to="/" className="flex items-center gap-2">
+              <img src="/Logo.png" alt="SyncedSelf" className="h-8 w-auto" />
+              <span className="font-bold">SyncedSelf</span>
             </Link>
             <span className="hidden md:block ml-6 text-sm text-gray-500">|</span>
             <Link 

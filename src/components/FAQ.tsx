@@ -8,20 +8,20 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "How does blockchain technology enhance my therapy experience?",
-    answer: "Blockchain technology ensures your data remains private and secure. It verifies therapist credentials, creates immutable session records, and allows you to control exactly who has access to your information. This creates a trustless system where you don't need to rely on a central authority to protect your sensitive mental health data."
+    question: "What is the $SYNCED token and how does it power the platform?",
+    answer: "$SYNCED is our governance token that enables community participation in platform decisions. Token holders can vote on key decisions, stake for rewards, and use tokens for therapy payments. The token creates a sustainable ecosystem where users are incentivized to contribute to the platform's growth."
   },
   {
-    question: "What are SyncedSelf tokens and how do they work?",
-    answer: "SyncedSelf tokens are our platform's cryptocurrency that facilitate direct payments between clients and therapists. They reduce transaction fees compared to traditional payment systems, enable micropayments for shorter sessions, and can be purchased with fiat currency or other cryptocurrencies. Tokens are stored in your secure wallet within the platform."
+    question: "How does LayerZero integration benefit users?",
+    answer: "LayerZero enables seamless cross-chain access to mental health services. Users can participate in therapy sessions and DAO governance from any supported blockchain, making mental health support truly borderless and accessible regardless of their preferred blockchain network."
   },
   {
-    question: "How are therapists verified on the platform?",
-    answer: "Therapists undergo a rigorous verification process where their credentials, licenses, and qualifications are validated and then recorded on the blockchain. This creates a transparent, tamper-proof record of their qualifications that you can trust. We also maintain a reputation system based on verified session feedback."
+    question: "Why did you choose Solana for the platform?",
+    answer: "Solana's high-performance blockchain provides fast, low-cost transactions ideal for frequent therapy payments and DAO governance. The network's efficiency ensures a smooth user experience while maintaining security and decentralization."
   },
   {
-    question: "What happens to my data on SyncedSelf?",
-    answer: "Your data is encrypted and stored in a decentralized manner. Only you hold the encryption keys, meaning only you can grant or revoke access to your information. Session notes and records are tokenized and stored on the blockchain without personally identifiable information, maintaining privacy while creating an immutable record of your therapy journey."
+    question: "How does the DAO governance work?",
+    answer: "$SYNCED token holders can propose and vote on platform changes, from fee structures to therapist onboarding criteria. This ensures the platform evolves according to community needs while maintaining transparency and decentralization."
   },
   {
     question: "Can I use SyncedSelf anonymously?",

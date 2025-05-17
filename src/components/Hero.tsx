@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Shield, Lock, Check } from 'lucide-react';
+import { Shield, Lock, Check, Zap, Network, Globe2 } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -39,37 +39,44 @@ const Hero: React.FC = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">
-            Welcome to <span className="gradient-text">SyncedSelf</span>
+            The First Cross-Chain <span className="gradient-text">Mental Health DAO</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 fade-in" style={{ transitionDelay: '200ms' }}>
-            Experience the future of mental health support with SyncedSelf. Our blockchain-powered platform ensures your journey is private, secure, and completely on your terms.
+            Powered by LayerZero and Solana, SyncedSelf revolutionizes mental health support through decentralized governance, cross-chain accessibility, and the $SYNCED token economy.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 fade-in" style={{ transitionDelay: '400ms' }}>
             <button className="btn-primary">Join SyncedSelf Today</button>
             <button className="btn-secondary">Learn More</button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 fade-in" style={{ transitionDelay: '600ms' }}>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12 fade-in" style={{ transitionDelay: '600ms' }}>
             <div className="bg-white p-6 rounded-xl card-shadow">
               <div className="bg-teal-100 p-3 rounded-full w-fit mx-auto mb-4">
-                <Shield className="h-6 w-6 text-teal-600" />
+                <Network className="h-6 w-6 text-teal-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">SyncedSelf Security</h3>
-              <p className="text-gray-600">Your data on SyncedSelf is encrypted and only accessible by you.</p>
+              <h3 className="font-semibold text-lg mb-2">Cross-Chain Access</h3>
+              <p className="text-gray-600">Seamlessly access therapy services across multiple blockchains via LayerZero.</p>
             </div>
             <div className="bg-white p-6 rounded-xl card-shadow">
               <div className="bg-purple-100 p-3 rounded-full w-fit mx-auto mb-4">
-                <Lock className="h-6 w-6 text-purple-600" />
+                <Zap className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Decentralized Care</h3>
-              <p className="text-gray-600">SyncedSelf ensures no central authority controls your health information.</p>
+              <h3 className="font-semibold text-lg mb-2">$SYNCED Token</h3>
+              <p className="text-gray-600">Governance token for platform decisions and therapy payments.</p>
             </div>
             <div className="bg-white p-6 rounded-xl card-shadow">
               <div className="bg-blue-100 p-3 rounded-full w-fit mx-auto mb-4">
-                <Check className="h-6 w-6 text-blue-600" />
+                <Globe2 className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">SyncedSelf Verified</h3>
-              <p className="text-gray-600">Our blockchain technology ensures verifiable therapy credentials.</p>
+              <h3 className="font-semibold text-lg mb-2">DAO Governance</h3>
+              <p className="text-gray-600">Community-driven decisions on platform development and therapist onboarding.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl card-shadow">
+              <div className="bg-emerald-100 p-3 rounded-full w-fit mx-auto mb-4">
+                <Shield className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Solana Powered</h3>
+              <p className="text-gray-600">Fast, low-cost transactions on Solana's high-performance network.</p>
             </div>
           </div>
         </div>
