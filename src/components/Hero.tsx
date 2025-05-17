@@ -39,13 +39,13 @@ const Hero: React.FC = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">
-            Mental Health Support, <span className="gradient-text">Decentralized</span>
+            Welcome to <span className="gradient-text">SyncedSelf</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 fade-in" style={{ transitionDelay: '200ms' }}>
-            Connect with therapists on your terms. Private, secure, and powered by blockchain technology.
+            Experience the future of mental health support with SyncedSelf. Our blockchain-powered platform ensures your journey is private, secure, and completely on your terms.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 fade-in" style={{ transitionDelay: '400ms' }}>
-            <button className="btn-primary">Start Your Journey</button>
+            <button className="btn-primary">Join SyncedSelf Today</button>
             <button className="btn-secondary">Learn More</button>
           </div>
 
@@ -54,22 +54,22 @@ const Hero: React.FC = () => {
               <div className="bg-teal-100 p-3 rounded-full w-fit mx-auto mb-4">
                 <Shield className="h-6 w-6 text-teal-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Secure & Private</h3>
-              <p className="text-gray-600">Your data is encrypted and only accessible by you.</p>
+              <h3 className="font-semibold text-lg mb-2">SyncedSelf Security</h3>
+              <p className="text-gray-600">Your data on SyncedSelf is encrypted and only accessible by you.</p>
             </div>
             <div className="bg-white p-6 rounded-xl card-shadow">
               <div className="bg-purple-100 p-3 rounded-full w-fit mx-auto mb-4">
                 <Lock className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Decentralized</h3>
-              <p className="text-gray-600">No central authority controls your health information.</p>
+              <h3 className="font-semibold text-lg mb-2">Decentralized Care</h3>
+              <p className="text-gray-600">SyncedSelf ensures no central authority controls your health information.</p>
             </div>
             <div className="bg-white p-6 rounded-xl card-shadow">
               <div className="bg-blue-100 p-3 rounded-full w-fit mx-auto mb-4">
                 <Check className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Transparent</h3>
-              <p className="text-gray-600">Blockchain ensures verifiable therapy credentials.</p>
+              <h3 className="font-semibold text-lg mb-2">SyncedSelf Verified</h3>
+              <p className="text-gray-600">Our blockchain technology ensures verifiable therapy credentials.</p>
             </div>
           </div>
         </div>

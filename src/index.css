@@ -24,11 +24,11 @@
   }
   
   .btn-primary {
-    @apply bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-md;
+    @apply bg-solana-main hover:bg-solana-green text-solana-dark font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-md;
   }
   
   .btn-secondary {
-    @apply bg-white border border-gray-300 hover:border-teal-600 text-gray-800 font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-sm;
+    @apply bg-solana-dark border border-solana-main hover:border-solana-green text-solana-main font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] shadow-sm;
   }
   
   .section-heading {
@@ -49,11 +49,11 @@
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #0d9488 0%, #7e22ce 100%);
+  background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #0d9488, #7e22ce);
+  background: linear-gradient(90deg, #9945FF, #14F195);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { MenuIcon, X, Zap } from 'lucide-react';
+import { MenuIcon, X } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,13 +19,12 @@ const Header: React.FC = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled ? 'bg-white shadow-sm py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="container-custom flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <Zap className="text-teal-600 h-7 w-7" />
-          <span className="ml-2 text-xl font-bold">SyncedSelf</span>
+          <img src="/Logo.png" alt="SyncedSelf" className="h-16 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -64,7 +63,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute top-full left-0 right-0 py-4">
+        <div className={`md:hidden ${isScrolled ? 'bg-white' : 'bg-white/95'} shadow-lg absolute top-full left-0 right-0 py-4`}>
           <div className="container-custom flex flex-col space-y-4">
             <a 
               href="#features" 
